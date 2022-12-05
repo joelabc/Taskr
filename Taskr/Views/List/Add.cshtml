@@ -1,0 +1,66 @@
+﻿@model Taskr.Models.Domain.ToDoList
+
+@{
+}
+
+
+<div class="layout">
+    <div class="text-center">
+        <h3>Daily Highlight</h3>
+        <p>Getting things done has never been easier!</p>
+
+        <form id="taskAdd" method="post" action="Add" style="display:flex;flex-direction:row" >
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Let's get things done! 🚀" asp-for="Name">
+                <input type="date" class="custom-select mr-sm-2" aria-label="Date time selector" asp-for="DueDate">
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" asp-for="Tag">
+                    <option selected>Tags</option>
+                    <option value="work">work</option>
+                    <option value="self">self</option>
+                    <option value="learning">learning</option>
+                </select>
+
+                <button type="submit" class="button-74" role="button">Add task</button>
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+    <div>
+        <div class="tab-pane" id="active" role="tabpanel" aria-labelledby="active-tab">
+            <div class="status-block">
+                <p><div>Active </div></p>
+                <p><div>Active </div></p>
+                <p><div>Active </div></p>
+                <p><div>Active </div></p>
+
+            </div>
+        </div>
+
+        @*     <div class="status-block">
+        <p><div>InActive </div></p>
+        <p><div>InActive </div></p>
+        <p><div>InActive </div></p>
+        <p><div>InActive </div></p>
+        <p><div>InActive </div></p>
+        <p><div>InActive </div></p>
+        <p><div>InActive </div></p>
+        <p><div>InActive </div></p>
+        <p><div>InActive </div></p>
+        <p><div>InActive </div></p>
+        <p><div>InActive </div></p>
+        </div>
+        *@
+
+
+
+
+    </div>
+</div>
+
+  

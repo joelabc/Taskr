@@ -1,0 +1,29 @@
+﻿@model List<Taskr.Models.Domain.ToDoList>
+
+@{
+}
+
+<h3>Task List</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Tag</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var taskList in Model)
+        {
+            <tr>
+                <th>@taskList.Name</th>
+                <th>@taskList.DueDate.ToString("dd-MM-yyyy")</th>
+                <th>@taskList.Status</th>
+                <th>@taskList.Tag</th>
+                <th><a href="List/View/@taskList.Id"></a></th>
+            </tr>
+        }
+    </tbody>
+</table>

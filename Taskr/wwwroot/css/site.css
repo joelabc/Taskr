@@ -1,0 +1,189 @@
+:root {
+    --dark-grey: #2e2e2e;
+    --white: #ffffff;
+    --taskr-blue: #10ABED;
+}
+
+html {
+    font-size: 14px;
+    background-color: var(--dark-grey);
+    font-family: "Poppins", sans-serif;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    background-color: var(--dark-grey);
+}
+
+body {
+    
+    height:100%;
+    background-color: var(--dark-grey) !important;
+}
+
+.layout {
+    display: grid;
+    grid-template-rows: 1fr;
+}
+img{
+    width:70px;
+    height:auto;
+}
+
+div.tasklist {
+    background-color: var(--white);
+    border-radius: 20px;
+    color: var(--dark-grey);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    margin: 10px;
+    padding: 20px;
+    height: 15px;
+}
+
+.completed {
+    background-color: grey;
+    border-radius: 20px;
+    color: var(--dark-grey);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    margin: 10px;
+    padding: 20px;
+    height: 20px;
+}
+
+p{
+    color:white;
+}
+
+label {
+    display: block;
+}
+
+footer.custom {
+    display: flex;
+    height: 70px;
+    justify-content: flex-end;
+    padding-bottom:20px;
+    align-content: flex-end;
+   
+    width: 100%;
+    white-space: nowrap;
+    
+}
+
+div.container-fluid{
+    width:100VW;
+}
+
+h3{
+    color:white;
+}
+
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+input[type=checkbox],
+.uneditable-input:focus {
+    border-color: var(--taskr-blue);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    accent-color: var(--taskr-blue);
+    
+}
+
+.form-check-input:checked {
+    accent-color: var(--taskr-blue);
+    background-color: var(--taskr-blue) !important;
+}
+
+.form-check-input:focus {
+    accent-color: var(--taskr-blue);
+    
+}
+
+.btn-bd-primary {
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: white !important;
+    --bs-btn-bg: var(--taskr-blue) !important;
+    --bs-btn-border-color: var(--bd-violet);
+    --bs-btn-border-radius: .5rem;
+    --bs-btn-hover-color: var(--dark-grey);
+    --bs-btn-hover-bg: var(--taskr-blue);
+    --bs-btn-hover-border-color: var(--taskr-blue) !important;
+    --bs-btn-focus-shadow-rgb: var(--white) !important;
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: var(--taskr-blue) !important;
+    --bs-btn-active-border-color: var(--white);
+}
+
+
+.button-74 {
+    background-color: var(--dark-grey);
+    border: 2px solid var(--taskr-blue);
+    border-radius: 30px;
+    color: var(--white);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 0 10px;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+    .button-74:hover {
+        background-color: var(--taskr-blue);
+    }
+
+
+@media (min-width: 768px) {
+    .button-74 {
+        min-width: 120px;
+        padding: 0 25px;
+    }
+}
+
+
+.status-block {
+    color: white;
+    height: 45vh;
+    overflow: auto;
+    scroll-behavior:smooth;
+}
+
+table, th,tr,td,thead,tbody {
+    color: var(--white);
+    
+}
