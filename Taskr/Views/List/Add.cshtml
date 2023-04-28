@@ -1,4 +1,4 @@
-﻿@model Taskr.Models.Domain.ToDoList
+﻿@model Taskr.ViewModel.ToDoViewModel
 
 @{
 }
@@ -9,16 +9,16 @@
         <h3>Daily Highlight</h3>
         <p>Getting things done has never been easier!</p>
 
-        <form id="taskAdd" method="post" action="Add" style="display:flex;flex-direction:row" >
+        <form id="taskAdd" method="post" action="Add" style="display:flex;flex-direction:row">
 
             <div class="input-group mb-3">
-                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Let's get things done! 🚀" asp-for="Name">
-                <input type="date" class="custom-select mr-sm-2" aria-label="Date time selector" asp-for="DueDate">
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" asp-for="Tag">
+                <input type="text" class="form-control" aria-label="Text input with checkbox" placeholder="Let's get things done! 🚀" asp-for="@Model.ToDoList.Name">
+                <input type="date" class="custom-select mr-sm-2" aria-label="Date time selector" asp-for="@Model.ToDoList.DueDate">
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" asp-for="@Model.ToDoList.Tag">
                     <option selected>Tags</option>
-                    <option value="work">work</option>
-                    <option value="self">self</option>
-                    <option value="learning">learning</option>
+                    <option value="work">Work</option>
+                    <option value="self">Self</option>
+                    <option value="learning">Learning</option>
                 </select>
 
                 <button type="submit" class="button-74" role="button">Add task</button>
@@ -33,13 +33,40 @@
 
     <div>
         <div class="tab-pane" id="active" role="tabpanel" aria-labelledby="active-tab">
-            <div class="status-block">
-                <p><div>Active </div></p>
-                <p><div>Active </div></p>
-                <p><div>Active </div></p>
-                <p><div>Active </div></p>
-
-            </div>
+            <h3>Task List</h3>
+            <form id="taskUpdate" method="post" action="CompleteToDo" style="display:flex;flex-direction:row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Name</th>
+                        <th>Due Date</th>
+                        
+                        <th>Tag</th>
+                        
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var taskList in Model.ToDoLists)
+                    {
+                        @if (taskList.Status != true)
+                        {
+                            <tr>
+                                <td>
+                                        <button type="button" class="buttons"><i class="material-icons">check_circle</i></button>
+                                    @*<input type="checkbox" onclick="" />*@
+                                </td>
+                                <td>@taskList.Name</td>
+                            <td>@taskList.DueDate.ToString("dd-MM-yyyy")</td>
+                            @*<th>@taskList.Status</th>*@
+                            <td>@taskList.Tag</td>
+                        </tr>}
+                    }
+                </tbody>
+            </table>
+            </form>
+            
         </div>
 
         @*     <div class="status-block">
@@ -63,4 +90,3 @@
     </div>
 </div>
 
-  

@@ -12,8 +12,8 @@ using Taskr.Infrastructure;
 namespace Taskr.Migrations
 {
     [DbContext(typeof(ToDoContext))]
-    [Migration("20221205042010_First Migration")]
-    partial class FirstMigration
+    [Migration("20230116032953_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

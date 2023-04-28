@@ -8,22 +8,21 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Due Date</th>
-            <th>Status</th>
+            <th>Completed Date</th>
             <th>Tag</th>
-            <th></th>
+            
         </tr>
     </thead>
     <tbody>
-        @foreach (var taskList in Model)
+        @foreach (var taskList in Model){
+        @if (taskList.Status == true)
         {
             <tr>
-                <th>@taskList.Name</th>
-                <th>@taskList.DueDate.ToString("dd-MM-yyyy")</th>
-                <th>@taskList.Status</th>
-                <th>@taskList.Tag</th>
-                <th><a href="List/View/@taskList.Id"></a></th>
+                <td>@taskList.Name</td>
+                <td>@taskList.DueDate.ToString("dd-MM-yyyy")</td>
+                <td>@taskList.Tag</td>
+                
             </tr>
-        }
+        }}
     </tbody>
 </table>

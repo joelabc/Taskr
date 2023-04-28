@@ -5,5 +5,66 @@
 <div class="text-center">
 <h3>@ViewData["Title"]</h3>
 
-<p>Use this timer to log the time spent</p>
+<p>Use this timer to log the time spent in deep work</p>
+
+
+<div class="timer">
+    <div style="display:grid;">
+        
+        <h1 id="maintimer"><output id="value"></output> : 00</h1>
+        <h1 style ="font-size:20px"></h1>
+            
+        <p id="test">minutes</p>
+        
+    </div>
+    
+    
+    <div style="display:flex">
+            <input class="range" id="range" type="range" max="120" min="2" step="1" value="60"/>
+            <p></p>
+    </div>
+
+        
+    <button id="reset" class="buttons" onclick="stop()">
+            <i class="material-icons">replay</i>
+    </button>
+    <button id="pause" class="buttons">
+            <i class="material-icons">pause</i>
+    </button>
+    <button id="start" class="buttons" onclick="startTimer()">
+        <i class="material-icons">play_arrow</i>
+    </button>
+    @*<button id="resume" class="buttons" >
+        <i class="material-icons">play_circle</i>
+    </button>*@
+
+</div>
+
+<script>
+    const value = document.querySelector("#value")
+    const input = document.querySelector("#range")
+    var placeholder = document.getElementById("value");
+    var start = document.getElementById("start");
+    placeholder.innerHTML = input.value
+    var reset = document.getElementById("reset");
+    reset.style.display = "none";
+    var pause = document.getElementById("pause");
+    pause.style.display = "none";
+       // var resume = document.querySelector("#resume");
+    //resume.style.display = "none";
+    
+    var range = document.getElementById("range");
+    range.onchange = function() {
+            
+        placeholder.innerHTML = input.value
+            
+        }
+    
+    input.addEventListener("test", (event) => {
+    value.textContent = event.target.value
+    
+    
+
+})
+</script>
 </div>

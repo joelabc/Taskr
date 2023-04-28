@@ -187,3 +187,33 @@ table, th,tr,td,thead,tbody {
     color: var(--white);
     
 }
+
+.timer {
+    width: 70%;
+    padding: 40px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: var(--taskr-blue)
+}
+
+
+a {
+    text-decoration:none !important; 
+}
+
+.timerfield {
+    margin:20px 5px 20px 5px;
+    width:100%
+}
+
+.range {
+    width: 100%;
+    padding-bottom: 20px;
+    padding-top: 20px
+}
+
+.buttons {
+    background-color: var(--taskr-blue);
+    border:none
+
+}
